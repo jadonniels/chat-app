@@ -8,6 +8,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// THIS IS ALL OF THE API HANDLERS AND TIES ALL INTERNAL FUNCTIONALITY TOGETHER.
+
 // check if server is running
 func Ping(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "pong"})

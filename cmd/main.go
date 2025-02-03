@@ -18,7 +18,7 @@ func main() {
 	// Load environment variables
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "8000"
+		port = "8080"
 	}
 
 	// Initialize Gin router

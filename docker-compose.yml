@@ -1,0 +1,33 @@
+services:
+  # PostgreSQL database
+  db:
+    image: postgres:14
+    container_name: chatapp-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: chatapp
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  # Your Go application
+  app:
+    build: .
+    container_name: chatapp
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: myuser
+      DB_PASSWORD: mypassword
+      DB_NAME: myapp
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    command: ["./chatapp"]
+
+# Volumes for persistent storage
+volumes:
+  postgres-data:
