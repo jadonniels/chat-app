@@ -13,6 +13,7 @@ import (
 // check if server is running
 func Ping(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "pong"})
+	c.JSON(http.StatusOK, gin.H{"user": "hi"})
 }
 
 // GetUsers fetches users from the database
