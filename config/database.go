@@ -29,4 +29,5 @@ func InitDB() {
 
 	// Run migrations
 	db.AutoMigrate(&models.User{})
+	db.AutoMigrate(&models.Message{})
 }

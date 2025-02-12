@@ -5,8 +5,7 @@ import (
 	"chat_app/internal/models"
 )
 
-// THIS PACKAGE IS RESPONSIBLE FOR DIRECTLY QUERYING THE DATABASE.
-// THERE SHOULD BE NO BUSINESS LOGIC!
+// THIS PACKAGE IS RESPONSIBLE ONLY FOR DIRECTLY QUERYING THE DATABASE.
 
 // GetAllUsers fetches all users
 func GetAllUsers() ([]models.User, error) {

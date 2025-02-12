@@ -31,7 +31,7 @@ WORKDIR /root/
 # Copy the compiled binary from the builder stage
 COPY --from=builder /app/chatapp .
 COPY --from=builder /app/templates /root/templates
-COPY ./public /root/public
+COPY --from=builder /app/frontend /root/frontend
 
 # Expose the port the app will run on (example: 8080)
 EXPOSE 8080
